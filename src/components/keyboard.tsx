@@ -18,7 +18,7 @@ export function Keyboard() {
       <ol className="keyboard">
         {numbers.map((item) => (
           <Key
-            number={item}
+            item={item}
             key={item}
             handleKeyPress={handleKeyPress}
             disabled={phoneNumber.length >= 9 && item !== "Delete"}

@@ -1,19 +1,27 @@
+import {useContext} from "react"
+import { Context } from "../context/context";
+
+
 export type PropsType = {
-  number: string;
+  item: string;
 };
 
-type Props = {
-  number: string;
-  handleKeyPress: (number: string) => void;
-  disabled: boolean;
-};
 
-export function Key({ number, handleKeyPress, disabled }: Props) {
+export function Key({ item: number}: PropsType) {
+  const {
+context : {handleAddKey} = useContext(Context)
+
+  function handleClick() {
+    if (!calling) handleAddKey(number);
+  }
+
+
+  }
   return (
     <li>
       <button
         className="key"
-        onClick={() => handleKeyPress(number)}
+        onClick={() => handleAddKey(number)}
         disabled={disabled}
       >
         {number}
